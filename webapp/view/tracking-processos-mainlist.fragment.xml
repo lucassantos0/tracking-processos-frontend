@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Table
+		headerText="{i18n>mainlist-title}"
+		items="{
+			path:'ProcurementProcesses>/list',
+			sorter: {
+				path: 'id',
+				descending: false
+			}
+		}" >
+		<columns>
+			<Column mergeDuplicates="true">
+				<header>
+					<Text text="{i18n>mainlist-process}" />
+				</header>
+			</Column>
+			<Column mergeDuplicates="true">
+				<header>
+					<Text text="{i18n>mainlist-taskname}" />
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="{i18n>mainlist-priority}" />
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="{i18n>mainlist-lastapprovaldate}" />
+				</header>
+			</Column>
+			<Column >
+				<header>
+					<Text text="{i18n>mainlist-estimatedenddate}" />
+				</header>
+			</Column>
+		</columns>
+		<ColumnListItem >
+			<Text text="{ProcurementProcesses>id}" />
+            <HBox>
+                <core:Icon 
+                    color="red"
+                    src="sap-icon://alert" 
+                    visible="{= ${ProcurementProcesses>priority} === 'Urgente' ? true : false}"  />
+                <ObjectStatus
+                    class=""
+                    text="{ProcurementProcesses>taskName}"
+                    state="{= ${ProcurementProcesses>priority} === 'Urgente' ? 'Error' : 'Success' }" />
+            </HBox>
+			<Text text="{ProcurementProcesses>priority}" />
+			<Text text="{ProcurementProcesses>lastApprovalDate}"  />
+			<Text text="{ProcurementProcesses>estimatedProcessEndDate}" />
+		</ColumnListItem>
+	</Table>
+</core:FragmentDefinition>

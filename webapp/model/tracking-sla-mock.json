@@ -1,0 +1,22 @@
+{
+  "sla": [
+    {
+      "name": "SR Criada",
+      "semaphor-warning": 5,
+      "semaphor-important": 10,
+      "semaphor-critical": 15
+    },
+    {
+      "name": "Aprovações",
+      "semaphor-warning": 2,
+      "semaphor-important": 7,
+      "semaphor-critical": 12
+    },
+    {
+      "name": "Suprimentos",
+      "semaphor-warning": 9,
+      "semaphor-important": 12,
+      "semaphor-critical": 20
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "list": [
+    {
+      "id": "SR 19419413643P",
+      "taskName": "SR Criada",
+      "priority": "Normal",
+      "lastApprovalDate": "2021-04-01T21:05:12Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    },
+    {
+      "id": "SR 19419413643P",
+      "taskName": "Aprovações",
+      "priority": "Normal",
+      "lastApprovalDate": "2021-04-01T21:05:12Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    },
+    {
+      "id": "SR 19419413643P",
+      "taskName": "Suprimentos",
+      "priority": "Normal",
+      "lastApprovalDate": "2021-04-01T21:05:12Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    },
+    {
+      "id": "SR 19419413643P",
+      "taskName": "Compliance",
+      "priority": "Normal",
+      "lastApprovalDate": "2021-04-01T21:05:12Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    },
+    {
+      "id": "SR 19419413643P",
+      "taskName": "Jurídico",
+      "priority": "Normal",
+      "lastApprovalDate": "2021-04-01T21:05:12Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    },
+    {
+      "id": "SR 19419413643P",
+      "taskName": "Aprovação da Área Solicitante",
+      "priority": "Urgente",
+      "lastApprovalDate": "2021-04-01T21:05:12Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    },
+    {
+      "id": "SR 19419413994P",
+      "taskName": "SR Criada",
+      "priority": "Urgente",
+      "lastApprovalDate": "2021-05-15T14:39:00Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    }
+  ]
+}

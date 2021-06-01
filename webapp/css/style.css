@@ -1,1 +1,16 @@
 /* Enter your custom styles here */
+.finished-task{
+    background-color: green;
+}
+
+.warning-task{
+    background-color: yellow;
+}
+
+.important-task{
+    background-color: orange;
+}
+
+.critical-task{
+    background-color: orangered;
+}
