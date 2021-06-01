@@ -38,10 +38,31 @@
     {
       "id": "SR 19419413643P",
       "taskName": "Aprovação da Área Solicitante",
-      "priority": "Urgente",
+      "priority": "Normal",
       "lastApprovalDate": "2021-04-01T21:05:12Z",
       "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
     },
+    {
+      "id": "SR 19419413643P",
+      "taskName": "Controladoria",
+      "priority": "Normal",
+      "lastApprovalDate": "2021-04-01T21:05:12Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    },   
+    {
+      "id": "SR 19419413643P",
+      "taskName": "Trâmites de Assinatura",
+      "priority": "Normal",
+      "lastApprovalDate": "2021-04-01T21:05:12Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    }, 
+    {
+      "id": "SR 19419413643P",
+      "taskName": "Status Pedido ou Contrato ECC",
+      "priority": "Urgente",
+      "lastApprovalDate": "2021-04-01T21:05:12Z",
+      "estimatedProcessEndDate": "2021-12-29T10:00:00Z"
+    },          
     {
       "id": "SR 19419413994P",
       "taskName": "SR Criada",

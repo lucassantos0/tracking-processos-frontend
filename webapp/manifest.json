@@ -83,24 +83,31 @@
         "async": true,
         "viewPath": "com.brf.trackingprocessos.trackingprocessosfrontend.view",
         "controlAggregation": "pages",
-        "controlId": "app",
-        "clearControlAggregation": false
+        "controlId": "app"
       },
       "routes": [
         {
-          "name": "Routetracking-processos-home",
-          "pattern": "Routetracking-processos-home",
-          "target": ["Targettracking-processos-home"]
+          "name": "tracking-processos-home",
+          "pattern": "tracking-processos-home",
+          "target": "tracking-processos-home"
+        },{
+          "pattern": "tracking-processos-detalhes",
+          "name": "tracking-processos-detalhes",
+          "target": "tracking-processos-detalhes"
         }
       ],
       "targets": {
-        "Targettracking-processos-home": {
+        "tracking-processos-home": {
           "viewType": "XML",
           "transition": "slide",
-          "clearControlAggregation": false,
           "viewId": "tracking-processos-home",
           "viewName": "tracking-processos-home"
-        }
+        },"tracking-processos-detalhes": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "tracking-processos-detalhes",
+          "viewName": "tracking-processos-detalhes"
+				}
       }
     }
   }

@@ -37,7 +37,7 @@
 				</header>
 			</Column>
 		</columns>
-		<ColumnListItem >
+		<ColumnListItem type="Navigation" press="onPressItem">
 			<Text text="{ProcurementProcesses>id}" />
             <HBox>
                 <core:Icon 

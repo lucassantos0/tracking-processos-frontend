@@ -10,6 +10,11 @@ sap.ui.define([
 		return Controller.extend("com.brf.trackingprocessos.trackingprocessosfrontend.controller.tracking-processos-home", {
 			onInit: function () {
 
-			}
+			},
+
+			onPressItem: function (oEvent)  {
+				this.getOwnerComponent().getRouter().navTo("tracking-processos-detalhes");
+			},
+
 		});
 	});

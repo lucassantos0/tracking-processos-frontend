@@ -8,7 +8,7 @@
 	<Shell id="shell">
 		<App id="app">
 			<pages>
-				<Page id="page" title="{i18n>title}" showTitle="false">
+				<Page id="page" title="{i18n>title}" showTitle="false" titleAlignment="Center">
 					<content>
 						<core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.tracking-processos-mainlist" type="XML"/>
 					</content>

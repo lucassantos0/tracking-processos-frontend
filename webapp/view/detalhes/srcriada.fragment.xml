@@ -1,0 +1,23 @@
+<core:FragmentDefinition 
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:card="sap.f.cards"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:l="sap.ui.layout">
+	<f:Card class="sapUiMediumMargin" width="300px">
+		<f:header>
+			<card:Header title="SR 19419413643P" subtitle="Compra de Notebook" />
+		</f:header>
+		<f:content>
+  			<VBox
+				height="110px"
+				class="sapUiSmallMargin"
+				justifyContent="SpaceBetween">
+                <GenericTag text="SR Criada" status="Success" class="sapUiSmallMarginBottom" />
+                <GenericTag text="Tarefa B1 com status em andamento" status="Warning" class="sapUiSmallMarginBottom" />
+			</VBox>
+		</f:content>
+	</f:Card>
+</core:FragmentDefinition>
