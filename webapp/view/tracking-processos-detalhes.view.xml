@@ -5,10 +5,10 @@
 	xmlns="sap.m"
     displayBlock="true"
 >
-        <Page id="page" title="{i18n>title}" showTitle="false" titleAlignment="Center">
+        <Page id="detalhes" title="{i18n>title}" showTitle="false" titleAlignment="Center">
             <content>      
 
-                <Page id="page2" title="SR 19419413643P" titleAlignment="Center" showTitle="false" showNavButton="true" navButtonPress="onVoltar">
+                <Page id="detalhes1" title="SR 19419413643P" titleAlignment="Center" showTitle="false" showNavButton="true" navButtonPress="onVoltar">
                     <content>  
                         <ObjectHeader
                             id="oh1"
@@ -61,7 +61,7 @@
                                         <IconTabFilter icon="sap-icon://edit" iconColor="Positive" text="Assinatura">                                    
                                         </IconTabFilter>
                                         <IconTabSeparator icon="sap-icon://open-command-field" />                                                                                                
-                                        <IconTabFilter icon="sap-icon://sales-order" iconColor="Negative" text="ECC" >
+                                        <IconTabFilter icon="sap-icon://sales-order" iconColor="Critical" text="ECC" >
                                         </IconTabFilter>                        
                                     </items>
                                 </IconTabBar>

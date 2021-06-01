@@ -34,8 +34,7 @@
     "rootView": {
       "viewName": "com.brf.trackingprocessos.trackingprocessosfrontend.view.tracking-processos-home",
       "type": "XML",
-      "async": true,
-      "id": "tracking-processos-home"
+      "async": true
     },
     "dependencies": {
       "minUI5Version": "1.66.0",
