@@ -39,11 +39,13 @@
                                         <IconTabFilter icon="sap-icon://create" iconColor="Positive" text="SR Criada">
                                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.srcriada" type="XML"/>
                                         </IconTabFilter>
-                                        <IconTabSeparator icon="sap-icon://open-command-field" />
-                                        <IconTabFilter icon="sap-icon://employee-approvals" iconColor="Positive" text="Aprovações" count="3">                                    
+                                        <IconTabSeparator icon="sap-icon://open-command-field" />                                            
+                                        <IconTabFilter icon="sap-icon://employee-approvals" iconColor="Positive" text="Aprovações" count="4">                                    
+                                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.aprovacoes" type="XML"/>
                                         </IconTabFilter>
                                         <IconTabSeparator icon="sap-icon://open-command-field" />
-                                        <IconTabFilter icon="sap-icon://supplier" iconColor="Positive" text="Suprimentos">
+                                        <IconTabFilter icon="sap-icon://supplier" iconColor="Critical" text="Suprimentos">
+                                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.suprimentos" type="XML"/>
                                         </IconTabFilter>
                                         <IconTabSeparator icon="sap-icon://open-command-field" />
                                         <IconTabFilter icon="sap-icon://tree" iconColor="Positive" text="Compliance">                                    

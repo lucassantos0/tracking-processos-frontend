@@ -1,0 +1,71 @@
+<core:FragmentDefinition 
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:card="sap.f.cards"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:l="sap.ui.layout">
+			
+			<l:BlockLayout id="BlockLayout">
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell width="1" class="sapUiNoContentPadding sapUiTinyMargin">
+						<StandardListItem title="Suprimentos" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="false" infoStateInverted="true" />				
+					</l:BlockLayoutCell>			
+					<l:BlockLayoutCell width="1" class="sapUiNoContentPadding sapUiTinyMargin">
+						<StandardListItem title="SLA da Negociação/Cotação	" description="Aceite em andamento" highlight="Warning" adaptTitleSize="false" infoStateInverted="true" />		
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>		
+			</l:BlockLayout>		
+		
+			<f:Card class="sapUiTinyMargin" width="auto">
+					<f:header>
+						<card:Header title="Aceite de Demanda" subtitle="Concluído" />
+					</f:header>
+					<f:content>
+						<VBox>
+							<StandardListItem title="E1 - João da Silva" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />						
+						</VBox>
+					</f:content>
+				</f:Card>
+
+				<f:Card class="sapUiTinyMargin" width="auto">
+					<f:header>
+						<card:Header title="Cotação" subtitle="Concluído" />
+					</f:header>
+					<f:content>
+						<VBox>
+							<StandardListItem title="F1 - Descrição F1" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
+							<StandardListItem title="F2 - Descrição F2" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />							
+							<StandardListItem title="F3 - Descrição F3" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
+							<StandardListItem title="F4 - Descrição F4" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
+							<StandardListItem title="F5 - Descrição F5" description="Data: 03/06/2021" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" />				
+						</VBox>
+					</f:content>
+				</f:Card>
+
+				<f:Card class="sapUiTinyMargin" width="auto">
+					<f:header>
+						<card:Header title="Negociação" subtitle="Concluído" />
+					</f:header>
+					<f:content>
+						<VBox>
+							<StandardListItem title="G1 - Descrição G1" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
+							<StandardListItem title="G2 - Descrição G2" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />							
+							<StandardListItem title="G3 - Descrição G3" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
+							<StandardListItem title="G4 - Descrição G4" description="Data: 03/06/2021" highlight="Error" adaptTitleSize="true" infoStateInverted="true" />				
+							<StandardListItem title="G5 - Descrição G5" description="Data: 03/06/2021" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" />				
+						</VBox>
+					</f:content>
+				</f:Card>
+				<f:Card class="sapUiTinyMargin" width="auto">
+					<f:header>
+						<card:Header title="Encaminhado para Jurídico" subtitle="Concluído" />
+					</f:header>
+					<f:content>
+						<VBox>
+							<StandardListItem title="B0 - CRW" description="Data: 03/06/2021" highlight="Error" adaptTitleSize="true" infoStateInverted="true" />						
+						</VBox>
+					</f:content>
+				</f:Card>				
+</core:FragmentDefinition>
