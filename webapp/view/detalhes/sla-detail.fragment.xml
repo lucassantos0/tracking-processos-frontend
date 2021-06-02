@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<QuickView
+		id="quickView"
+		placement="Bottom">
+		<QuickViewPage			title="Detalhes do SLA"
+			description="Aceite em andamento">
+			<QuickViewGroup>
+				<QuickViewGroupElement label="Início do SLA" value="01.06.2021"/>
+                <QuickViewGroupElement label="Prazo" value="10 dias"/>
+                <QuickViewGroupElement label="Fim do SLA" value="11.06.2021"/>
+			</QuickViewGroup>
+		</QuickViewPage>
+	</QuickView>
+</core:FragmentDefinition>

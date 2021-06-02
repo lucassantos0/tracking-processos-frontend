@@ -7,9 +7,9 @@
 	xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:l="sap.ui.layout">
 			
-		<StandardListItem title="SLA da Negociação/Cotação	" description="Aceite em andamento" highlight="Warning" adaptTitleSize="false" infoStateInverted="true" />		
+		<StandardListItem title="SLA da Negociação/Cotação" description="Aceite em andamento" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" type="Active" press="onSlaDetail"/>		
 		<StandardListItem title="Suprimentos" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="false" infoStateInverted="true" />				
-			<f:Card class="sapUiTinyMargin" width="auto">
+			<f:Card class="sapUiTinyMargin" width="auto" tooltip="Contato: João da Silva">
 					<f:header>
 						<card:Header title="Aceite de Demanda" subtitle="Concluído" />
 					</f:header>
@@ -20,7 +20,7 @@
 					</f:content>
 				</f:Card>
 
-				<f:Card class="sapUiTinyMargin" width="auto">
+				<f:Card class="sapUiTinyMargin" width="auto" tooltip="Contato: João da Silva">
 					<f:header>
 						<card:Header title="Cotação" subtitle="Concluído" />
 					</f:header>
@@ -35,7 +35,7 @@
 					</f:content>
 				</f:Card>
 
-				<f:Card class="sapUiTinyMargin" width="auto">
+				<f:Card class="sapUiTinyMargin" width="auto" tooltip="Contato: João da Silva">
 					<f:header>
 						<card:Header title="Negociação" subtitle="Concluído" />
 					</f:header>
@@ -49,7 +49,7 @@
 						</VBox>
 					</f:content>
 				</f:Card>
-				<f:Card class="sapUiTinyMargin" width="auto">
+				<f:Card class="sapUiTinyMargin" width="auto" tooltip="Contato: João da Silva">
 					<f:header>
 						<card:Header title="Encaminhado para Jurídico" subtitle="Concluído" />
 					</f:header>

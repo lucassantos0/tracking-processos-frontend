@@ -6,7 +6,7 @@
     xmlns:card="sap.f.cards"
 	xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:l="sap.ui.layout">
-	<f:Card class="sapUiTinyMargin" width="300px">
+	<f:Card class="sapUiTinyMargin" width="auto" tooltip="Contato: João da Silva">
 		<f:header>
 			<card:Header title="Compliance" subtitle="Concluída" />
 		</f:header>
