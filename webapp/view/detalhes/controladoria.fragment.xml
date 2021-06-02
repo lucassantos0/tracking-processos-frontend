@@ -6,13 +6,14 @@
     xmlns:card="sap.f.cards"
 	xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:l="sap.ui.layout">
+	<StandardListItem title="SLA Controladoria" description="Concluído" highlight="Success" adaptTitleSize="false" infoStateInverted="true" />	
 	<f:Card class="sapUiTinyMargin" width="300px">
 		<f:header>
-			<card:Header title="Tarefa SR Criada" subtitle="Concluída" />
+			<card:Header title="Controladoria" subtitle="Concluído" />
 		</f:header>
 		<f:content>
   			<VBox>
-				<StandardListItem title="B1 - Aprovação do Gestor" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
+				<StandardListItem title="E2 - Controladoria" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
 			</VBox>
 		</f:content>
 	</f:Card>

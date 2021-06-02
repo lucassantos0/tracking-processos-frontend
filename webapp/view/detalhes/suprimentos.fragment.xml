@@ -7,17 +7,8 @@
 	xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:l="sap.ui.layout">
 			
-			<l:BlockLayout id="BlockLayout">
-				<l:BlockLayoutRow>
-					<l:BlockLayoutCell width="1" class="sapUiNoContentPadding sapUiTinyMargin">
-						<StandardListItem title="Suprimentos" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="false" infoStateInverted="true" />				
-					</l:BlockLayoutCell>			
-					<l:BlockLayoutCell width="1" class="sapUiNoContentPadding sapUiTinyMargin">
-						<StandardListItem title="SLA da Negociação/Cotação	" description="Aceite em andamento" highlight="Warning" adaptTitleSize="false" infoStateInverted="true" />		
-					</l:BlockLayoutCell>
-				</l:BlockLayoutRow>		
-			</l:BlockLayout>		
-		
+		<StandardListItem title="SLA da Negociação/Cotação	" description="Aceite em andamento" highlight="Warning" adaptTitleSize="false" infoStateInverted="true" />		
+		<StandardListItem title="Suprimentos" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="false" infoStateInverted="true" />				
 			<f:Card class="sapUiTinyMargin" width="auto">
 					<f:header>
 						<card:Header title="Aceite de Demanda" subtitle="Concluído" />

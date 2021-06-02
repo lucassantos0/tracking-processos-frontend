@@ -27,7 +27,7 @@
                             <statuses>
                                 <ObjectStatus
                                     text="Status Pedido ou Contrato ECC"
-                                    state="Error" />
+                                    state="Warning" />
                             </statuses>                        
                             <headerContainer>
                                 <IconTabBar
@@ -48,22 +48,28 @@
                                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.suprimentos" type="XML"/>
                                         </IconTabFilter>
                                         <IconTabSeparator icon="sap-icon://open-command-field" />
-                                        <IconTabFilter icon="sap-icon://tree" iconColor="Positive" text="Compliance">                                    
+                                        <IconTabFilter icon="sap-icon://tree" iconColor="Positive" text="Compliance">
+                                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.compliance" type="XML"/>                                    
                                         </IconTabFilter>
                                         <IconTabSeparator icon="sap-icon://open-command-field" />
-                                        <IconTabFilter icon="sap-icon://compare" iconColor="Positive" text="Jurídico">
+                                        <IconTabFilter icon="sap-icon://compare" iconColor="Negative" text="Jurídico">
+                                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.juridico" type="XML"/>                                                                            
                                         </IconTabFilter>
                                         <IconTabSeparator icon="sap-icon://open-command-field" />
                                         <IconTabFilter icon="sap-icon://approvals" iconColor="Positive" text="Área Solicitante">                                    
+                                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.area-solicitante" type="XML"/>
                                         </IconTabFilter>
                                         <IconTabSeparator icon="sap-icon://open-command-field" />
                                         <IconTabFilter icon="sap-icon://sap-box" iconColor="Positive" text="Controladoria">
+                                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.controladoria" type="XML"/>
                                         </IconTabFilter>
                                         <IconTabSeparator icon="sap-icon://open-command-field" />
                                         <IconTabFilter icon="sap-icon://edit" iconColor="Positive" text="Assinatura">                                    
+                                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.assinatura" type="XML"/>
                                         </IconTabFilter>
                                         <IconTabSeparator icon="sap-icon://open-command-field" />                                                                                                
                                         <IconTabFilter icon="sap-icon://sales-order" iconColor="Critical" text="ECC" >
+                                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.integracao-ecc" type="XML"/>
                                         </IconTabFilter>                        
                                     </items>
                                 </IconTabBar>

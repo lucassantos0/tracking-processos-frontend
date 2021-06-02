@@ -1,0 +1,21 @@
+<core:FragmentDefinition 
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:card="sap.f.cards"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:l="sap.ui.layout">
+	<StandardListItem title="SLA Trâmites de Assinatura" description="Aceite em andamento" highlight="Warning" adaptTitleSize="false" infoStateInverted="true" />	
+	<f:Card class="sapUiTinyMargin" width="300px">
+		<f:header>
+			<card:Header title="Trâmites de Assinatura" subtitle="Em andamento" />
+		</f:header>
+		<f:content>
+  			<VBox>
+				<StandardListItem title="F2 - CRW" description="Data: 03/06/2021" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" />				
+				<StandardListItem title="F3 - CRW" description="Data: 03/06/2021" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" />			
+			</VBox>
+		</f:content>
+	</f:Card>
+</core:FragmentDefinition>

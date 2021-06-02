@@ -8,11 +8,11 @@
     xmlns:l="sap.ui.layout">
 	<f:Card class="sapUiTinyMargin" width="300px">
 		<f:header>
-			<card:Header title="Tarefa SR Criada" subtitle="Concluída" />
+			<card:Header title="Área Solicitante" subtitle="Concluída" />
 		</f:header>
 		<f:content>
   			<VBox>
-				<StandardListItem title="B1 - Aprovação do Gestor" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
+				<StandardListItem title="D1 - CRW - João da Silva" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
 			</VBox>
 		</f:content>
 	</f:Card>
