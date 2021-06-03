@@ -1,0 +1,76 @@
+{
+  "sla-suprimentos": [
+    {
+      "complexidade": "Baixa",
+      "processo": "Cotação",
+      "normal": 5,
+      "urgente": 3
+    },
+    {
+      "complexidade": "Baixa",
+      "processo": "Negociação",
+      "normal": 3,
+      "urgente": 2
+    },
+    {
+      "complexidade": "Baixa",
+      "processo": "Total",
+      "normal": 8,
+      "urgente": 5
+    }, 
+    {
+      "complexidade": "Média",
+      "processo": "Cotação",
+      "normal": 8,
+      "urgente": 6
+    },
+    {
+      "complexidade": "Média",
+      "processo": "Negociação",
+      "normal": 7,
+      "urgente": 4
+    },
+    {
+      "complexidade": "Média",
+      "processo": "Total",
+      "normal": 15,
+      "urgente": 10
+    },    {
+      "complexidade": "Alta",
+      "processo": "Cotação",
+      "normal": 18,
+      "urgente": 12
+    },
+    {
+      "complexidade": "Alta",
+      "processo": "Negociação",
+      "normal": 12,
+      "urgente": 8
+    },
+    {
+      "complexidade": "Alta",
+      "processo": "Total",
+      "normal": 30,
+      "urgente": 20
+    }   
+  ],
+  "sla-dias": [{
+    "id":"juridico",
+    "processo": "Jurídico",
+    "dias": 10
+  },{
+    "id":"controladoria",
+    "processo": "Controladoria",
+    "dias": 12
+  },{
+    "id": "assinatura",
+    "processo": "Trâmites Assinatura",
+    "dias": 8
+  },{
+    "id": "integracao-ecc",
+    "processo": "Integração ECC",
+    "dias": 3
+  }
+  ]    
+      
+}

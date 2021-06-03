@@ -2,18 +2,61 @@
     controllerName="com.brf.trackingprocessos.trackingprocessosfrontend.controller.tracking-processos-home"
     xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
-    displayBlock="true"
+	xmlns:tnt="sap.tnt"
     xmlns="sap.m"
 >
-	<Shell id="shell">
 		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}" showTitle="false" titleAlignment="Center">
-					<content>
-						<core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.tracking-processos-mainlist" type="XML"/>
-					</content>
-				</Page>
+			<pages>		
+				<tnt:ToolPage id="toolPage">
+					<tnt:header>
+						<tnt:ToolHeader>
+							<Button	id="sideNavigationToggleButton"	icon="sap-icon://menu2"	type="Transparent" press=".onSideNavButtonPress">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="NeverOverflow" />
+								</layoutData>
+							</Button>
+							<ToolbarSpacer/>
+							<Title level="H3" text="BRF - Tracking Processos" />
+							<ToolbarSpacer/>
+						</tnt:ToolHeader>
+						</tnt:header>
+						<tnt:sideContent>
+						<tnt:SideNavigation	expanded="true"	selectedKey="{sideNav>/selectedKey}" itemSelect=".onItemSelect">
+							<tnt:NavigationList items="{path: 'sideNav>/navigation'}">
+								<tnt:NavigationListItem
+									text="{sideNav>title}"
+									icon="{sideNav>icon}"
+									enabled="{sideNav>enabled}"
+									expanded="{sideNav>expanded}"
+									items="{sideNav>items}"
+									key="{sideNav>key}">
+									<tnt:NavigationListItem
+										text="{sideNav>title}"
+										key="{sideNav>key}"
+										enabled="{sideNav>enabled}" />
+								</tnt:NavigationListItem>
+							</tnt:NavigationList>
+						</tnt:SideNavigation>
+						</tnt:sideContent>
+						<tnt:mainContents>
+						<NavContainer id="pageContainer" initialPage="dashboard">
+						<pages>
+							<ScrollContainer id="dashboard"	horizontal="false" vertical="true" height="100%">
+									<core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.tracking-processos-dashboard" type="XML"/>
+							</ScrollContainer>
+							<ScrollContainer id="tracking"	horizontal="false" vertical="true" height="100%">
+									<core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.tracking-processos-mainlist" type="XML"/>
+							</ScrollContainer>
+							<ScrollContainer id="admin"	horizontal="false" vertical="true" height="100%">
+									<core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.tracking-processos-admin" type="XML"/>
+							</ScrollContainer>
+							<ScrollContainer id="detalhes" horizontal="false" vertical="true" height="100%">
+									<core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.tracking-processos-detalhes" type="XML"/>
+							</ScrollContainer>							
+						</pages>
+						</NavContainer>
+						</tnt:mainContents>
+				</tnt:ToolPage>
 			</pages>
 		</App>
-	</Shell>
 </mvc:View>

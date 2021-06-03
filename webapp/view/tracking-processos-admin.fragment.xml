@@ -1,0 +1,101 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Panel width="auto" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="SLA"/>
+				<ToolbarSpacer />
+				<Button icon="sap-icon://save" />
+			</OverflowToolbar>
+		</headerToolbar>
+		<content>	
+			<HBox>	
+				<Table id="tableSlaSuprimentos"
+				    fixedLayout="Strict" 
+					width="40em"
+					headerText="{i18n>slaconfig-tablesuprimentos}"
+					items="{
+						path:'SLA-config>/sla-suprimentos',
+						sorter: {
+							path: 'complexidade',
+							descending: false
+						}
+					}">
+					<columns>
+						<Column mergeDuplicates="true" width="15em">
+							<header>
+								<Text text="{i18n>slaconfig-tablesuprimentos-complexidade}" />
+							</header>
+						</Column>
+						<Column width="10em">
+							<header>
+								<Text text="{i18n>slaconfig-tablesuprimentos-processo}" />
+							</header>
+						</Column>
+						<Column width="10em">
+							<header>
+								<Text text="{i18n>slaconfig-tablesuprimentos-normal}" />
+							</header>
+						</Column>
+						<Column width="10em"> 
+							<header>
+								<Text text="{i18n>slaconfig-tablesuprimentos-urgente}" />
+							</header>
+						</Column>
+					</columns>
+					<ColumnListItem>
+						<Text text="{SLA-config>complexidade}" />
+						<Text text="{SLA-config>processo}" />
+						<HBox>
+							<StepInput 	value="{SLA-config>normal}" visible="{= ${SLA-config>processo} !== 'Total' }" width="4em"/>
+							<Text text="{SLA-config>normal}" visible="{= ${SLA-config>processo} === 'Total' }"/>
+						</HBox>
+						<HBox>
+							<StepInput 	value="{SLA-config>urgente}" visible="{= ${SLA-config>processo} !== 'Total' }" width="4em"/>			
+							<Text text="{SLA-config>urgente}" visible="{= ${SLA-config>processo} === 'Total' }"/>
+						</HBox>
+					</ColumnListItem>
+				</Table>
+				<Text renderWhitespace="true" text="   "></Text>
+				<Table id="tableSlaDias" fixedLayout="Strict" width="22em"
+					headerText="{i18n>slaconfig-tabledias}"
+					items="{
+						path:'SLA-config>/sla-dias',
+						sorter: {
+							path: 'processo',
+							descending: false
+						}
+					}">
+					<columns>
+						<Column width="15em">
+							<header>
+								<Text text="{i18n>slaconfig-tabledias-processo}" />
+							</header>
+						</Column>
+						<Column width="10em"> 
+							<header>
+								<Text text="{i18n>slaconfig-tabledias-dias}" />
+							</header>
+						</Column>
+					</columns>
+					<ColumnListItem>
+						<Text text="{SLA-config>processo}" />
+						<StepInput 	value="{SLA-config>dias}" width="4em"/>			
+					</ColumnListItem>
+				</Table>				
+			</HBox>
+		</content>
+	</Panel>
+		<Panel width="auto" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="Dashboard"/>
+				<ToolbarSpacer />
+				<Button icon="sap-icon://save" />
+			</OverflowToolbar>
+		</headerToolbar>
+		<content>	
+				</content>
+	</Panel>
+</core:FragmentDefinition>

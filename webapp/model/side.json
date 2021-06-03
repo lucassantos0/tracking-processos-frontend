@@ -1,0 +1,21 @@
+{
+	"selectedKey": "dashboard",
+	"navigation": [
+		{
+			"title": "Dashboard",
+			"icon": "sap-icon://filter-analytics",
+			"expanded": true,
+			"key": "dashboard"
+		},
+		{
+			"title": "Tracking processos",
+			"icon": "sap-icon://workflow-tasks",
+			"key": "tracking"
+		},		
+		{
+			"title": "Administração",
+			"icon": "sap-icon://key-user-settings",
+			"key": "admin"
+		}
+	]
+}

@@ -55,6 +55,12 @@
           "bundleName": "com.brf.trackingprocessos.trackingprocessosfrontend.i18n.i18n"
         }
       },
+      "sideNav": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {},
+        "preload": true,
+        "uri": "model/side.json"
+      },      
       "ProcurementProcesses": {
         "type": "sap.ui.model.json.JSONModel",
         "settings": {},
@@ -66,7 +72,13 @@
         "settings": {},
         "preload": true,
         "uri": "model/tracking-sla-mock.json"
-      }
+      },
+      "SLA-config": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {},
+        "preload": true,
+        "uri": "model/tracking-sla-config-mock.json"
+      }      
     },
     "resources": {
       "css": [

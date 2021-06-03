@@ -1,0 +1,73 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+	<OverflowToolbar design="Transparent" style="clear" height="2rem">
+		<Button icon="sap-icon://nav-back" press="onVoltarTracking"/>
+	</OverflowToolbar>
+    <ObjectHeader
+            id="oh1"
+            responsive="true"
+            icon="sap-icon://request"
+            iconAlt="SR 19419413643P"
+            title="SR 19419413643P"
+            number="3.599,00"     
+            intro="Compra de Notebook"
+            numberUnit="BRL"                       
+            class="sapUiResponsivePadding--header" >
+            <ObjectAttribute title="Demanda" text="Urgente" />
+            <ObjectAttribute title="Ultima atualização" text="2021-12-29T10:00:00Z" /> 
+            <ObjectAttribute title="Data da última aprovação" text="2021-04-01T21:05:12Z" />
+            <ObjectAttribute title="Data prevista conclusão" text="2021-12-29T10:00:00Z" />                                                        
+            <statuses>
+                <ObjectStatus
+                    text="Status Pedido ou Contrato ECC"
+                    state="Warning" />
+            </statuses>                        
+            <headerContainer>
+                <IconTabBar
+                    id="itb1"
+                    selectedKey="key3"
+                    upperCase="true"
+                    class="sapUiResponsiveContentPadding">
+                    <items>
+                        <IconTabFilter icon="sap-icon://create" iconColor="Positive" text="SR Criada">
+                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.srcriada" type="XML"/>
+                        </IconTabFilter>
+                        <IconTabSeparator icon="sap-icon://open-command-field" />                                            
+                        <IconTabFilter icon="sap-icon://employee-approvals" iconColor="Positive" text="Aprovações" count="4">                                    
+                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.aprovacoes" type="XML"/>
+                        </IconTabFilter>
+                        <IconTabSeparator icon="sap-icon://open-command-field" />
+                        <IconTabFilter icon="sap-icon://supplier" iconColor="Critical" text="Suprimentos">
+                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.suprimentos" type="XML"/>
+                        </IconTabFilter>
+                        <IconTabSeparator icon="sap-icon://open-command-field" />
+                        <IconTabFilter icon="sap-icon://tree" iconColor="Positive" text="Compliance">
+                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.compliance" type="XML"/>                                    
+                        </IconTabFilter>
+                        <IconTabSeparator icon="sap-icon://open-command-field" />
+                        <IconTabFilter icon="sap-icon://compare" iconColor="Negative" text="Jurídico">
+                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.juridico" type="XML"/>                                                                            
+                        </IconTabFilter>
+                        <IconTabSeparator icon="sap-icon://open-command-field" />
+                        <IconTabFilter icon="sap-icon://approvals" iconColor="Positive" text="Área Solicitante">                                    
+                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.area-solicitante" type="XML"/>
+                        </IconTabFilter>
+                        <IconTabSeparator icon="sap-icon://open-command-field" />
+                        <IconTabFilter icon="sap-icon://sap-box" iconColor="Positive" text="Controladoria">
+                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.controladoria" type="XML"/>
+                        </IconTabFilter>
+                        <IconTabSeparator icon="sap-icon://open-command-field" />
+                        <IconTabFilter icon="sap-icon://edit" iconColor="Positive" text="Assinatura">                                    
+                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.assinatura" type="XML"/>
+                        </IconTabFilter>
+                        <IconTabSeparator icon="sap-icon://open-command-field" />                                                                                                
+                        <IconTabFilter icon="sap-icon://sales-order" iconColor="Critical" text="ECC" >
+                            <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.integracao-ecc" type="XML"/>
+                        </IconTabFilter>                        
+                    </items>
+                </IconTabBar>
+            </headerContainer>
+        </ObjectHeader>
+</core:FragmentDefinition>
