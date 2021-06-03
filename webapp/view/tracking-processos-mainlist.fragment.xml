@@ -21,6 +21,11 @@
 					<Text text="{i18n>mainlist-taskname}" />
 				</header>
 			</Column>
+			<Column >
+				<header>
+					<Text text="{i18n>mainlist-responsavel}" />
+				</header>
+			</Column>			
 			<Column>
 				<header>
 					<Text text="{i18n>mainlist-priority}" />
@@ -36,6 +41,11 @@
 					<Text text="{i18n>mainlist-estimatedenddate}" />
 				</header>
 			</Column>
+			<Column >
+				<header>
+					<Text text="{i18n>mainlist-lastupdate}" />
+				</header>
+			</Column>			
 		</columns>
 		<ColumnListItem type="Navigation" press="onPressItem">
 			<Text text="{ProcurementProcesses>id}" />
@@ -49,9 +59,11 @@
                     text="{ProcurementProcesses>taskName}"
                     state="{= ${ProcurementProcesses>priority} === 'Urgente' ? 'Error' : 'Success' }" />
             </HBox>
+			<Text text="{ProcurementProcesses>owner}" />
 			<Text text="{ProcurementProcesses>priority}" />
 			<Text text="{ProcurementProcesses>lastApprovalDate}"  />
 			<Text text="{ProcurementProcesses>estimatedProcessEndDate}" />
+			<Text text="{ProcurementProcesses>lastUpdate}" />
 		</ColumnListItem>
 	</Table>
 </core:FragmentDefinition>

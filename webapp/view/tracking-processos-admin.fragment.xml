@@ -1,7 +1,7 @@
 <core:FragmentDefinition
     xmlns:core="sap.ui.core"
 	xmlns="sap.m">
-	<Panel width="auto" class="sapUiResponsiveMargin">
+	<Panel width="65em"  class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<OverflowToolbar>
 				<Title text="SLA"/>
@@ -18,7 +18,7 @@
 					items="{
 						path:'SLA-config>/sla-suprimentos',
 						sorter: {
-							path: 'complexidade',
+							path: 'id',
 							descending: false
 						}
 					}">
@@ -87,7 +87,7 @@
 			</HBox>
 		</content>
 	</Panel>
-		<Panel width="auto" class="sapUiResponsiveMargin">
+		<Panel width="65em" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<OverflowToolbar>
 				<Title text="Dashboard"/>

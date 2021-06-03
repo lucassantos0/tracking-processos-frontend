@@ -1,53 +1,63 @@
 {
   "sla-suprimentos": [
     {
+      "id":"1",
       "complexidade": "Baixa",
       "processo": "Cotação",
       "normal": 5,
       "urgente": 3
     },
     {
+      "id":"2",
       "complexidade": "Baixa",
       "processo": "Negociação",
       "normal": 3,
       "urgente": 2
     },
     {
+      "id":"3",
       "complexidade": "Baixa",
       "processo": "Total",
       "normal": 8,
       "urgente": 5
     }, 
     {
+      "id":"4",
       "complexidade": "Média",
       "processo": "Cotação",
       "normal": 8,
       "urgente": 6
     },
     {
+      "id":"5",  
       "complexidade": "Média",
       "processo": "Negociação",
       "normal": 7,
       "urgente": 4
     },
     {
+      "id":"6",
       "complexidade": "Média",
       "processo": "Total",
       "normal": 15,
       "urgente": 10
-    },    {
+    },
+    {
+      "id":"7",
       "complexidade": "Alta",
       "processo": "Cotação",
       "normal": 18,
       "urgente": 12
     },
     {
+      "id":"8",
       "complexidade": "Alta",
       "processo": "Negociação",
       "normal": 12,
       "urgente": 8
     },
     {
+      "id":"9",
       "complexidade": "Alta",
       "processo": "Total",
       "normal": 30,
