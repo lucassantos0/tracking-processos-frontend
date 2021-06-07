@@ -2,7 +2,7 @@
     xmlns:core="sap.ui.core"
 	xmlns="sap.m">
 	<Table
-		headerText="{i18n>mainlist-title}"
+		id="listProcessos"
 		items="{
 			path:'ProcurementProcesses>/list',
 			sorter: {
@@ -10,13 +10,46 @@
 				descending: false
 			}
 		}" >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="{i18n>mainlist-title}" level="H2"/>
+					<ToolbarSpacer />
+					<DateRangeSelection id="filtroDataCriacao" displayFormat="dd/MM/yyyy" width="13em" />
+					<CheckBox text="{i18n>mainlist-meusprocessos}" select="onSelectMeusProcessos"/>
+					<Label text="Etapa"/>	
+					<Select	forceSelection="false" selectedKey="todos" width="9em" change="onSelectEtapa">
+						<core:Item key="todos" text="" />
+						<core:Item key="SR Criada" text="{i18n>mainlist-srcriada}" />
+						<core:Item key="Aprovações" text="{i18n>mainlist-aprovacoes}" />
+						<core:Item key="Suprimentos" text="{i18n>mainlist-suprimentos}" />
+						<core:Item key="Compliance" text="{i18n>mainlist-compliance}" />
+						<core:Item key="Jurídico" text="{i18n>mainlist-juridico}" />
+						<core:Item key="Aprovação da Área Solicitante" text="{i18n>mainlist-areasolicitante}" />
+						<core:Item key="Controladoria" text="{i18n>mainlist-controladoria}" />
+						<core:Item key="Trâmites de Assinatura" text="{i18n>mainlist-assinatura}"/>
+						<core:Item key="Status Pedido ou Contrato ECC" text="{i18n>mainlist-ecc}"/>					
+					</Select>
+					<Label text="Status"/>	
+					<Select	forceSelection="false" selectedKey="todos" width="10em">
+						<core:Item key="todos" text="" />
+						<core:Item key="concluido" text="{i18n>mainlist-concluido}" />
+						<core:Item key="emandamento" text="{i18n>mainlist-emandamento}" />
+						<core:Item key="atrasado" text="{i18n>mainlist-atrasado}" />				
+					</Select>	
+					<CheckBox text="{i18n>mainlist-urgente}"
+						select="onSelect"/>	
+					<Button text="Limpar Filtros" type="Transparent" press="oNP"/>									
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
 		<columns>
 			<Column mergeDuplicates="true">
 				<header>
 					<Text text="{i18n>mainlist-process}" />
 				</header>
 			</Column>
-			<Column mergeDuplicates="true">
+			<Column width="20%">
 				<header>
 					<Text text="{i18n>mainlist-taskname}" />
 				</header>
@@ -26,22 +59,22 @@
 					<Text text="{i18n>mainlist-responsavel}" />
 				</header>
 			</Column>			
-			<Column>
+			<Column width="8%" hAlign="Center">
 				<header>
 					<Text text="{i18n>mainlist-priority}" />
 				</header>
 			</Column>
-			<Column>
+			<Column hAlign="Center">
 				<header>
 					<Text text="{i18n>mainlist-lastapprovaldate}" />
 				</header>
 			</Column>
-			<Column >
+			<Column width="15%" hAlign="Center">
 				<header>
 					<Text text="{i18n>mainlist-estimatedenddate}" />
 				</header>
 			</Column>
-			<Column >
+			<Column width="15%" hAlign="Center">
 				<header>
 					<Text text="{i18n>mainlist-lastupdate}" />
 				</header>
@@ -49,21 +82,30 @@
 		</columns>
 		<ColumnListItem type="Navigation" press="onPressItem">
 			<Text text="{ProcurementProcesses>id}" />
-            <HBox>
-                <core:Icon 
-                    color="red"
-                    src="sap-icon://alert" 
-                    visible="{= ${ProcurementProcesses>priority} === 'Urgente' ? true : false}"  />
-                <ObjectStatus
-                    class=""
-                    text="{ProcurementProcesses>taskName}"
-                    state="{= ${ProcurementProcesses>priority} === 'Urgente' ? 'Error' : 'Success' }" />
+            <HBox>                
+                <ObjectStatus class="sapUiTinyMarginEnd" text="{ProcurementProcesses>taskName}" state="{= ${ProcurementProcesses>status} === 'Atrasado' ? 'Error' : 'Success' }" 
+				visible="{= ${ProcurementProcesses>status} !== 'Em Andamento' ? true : false}"/>	
+                <ObjectStatus class="sapUiTinyMarginEnd" text="{ProcurementProcesses>taskName}" state="{= ${ProcurementProcesses>status} === 'Em Andamento' ? 'Warning' : 'Success' }" 
+				visible="{= ${ProcurementProcesses>status} === 'Em Andamento' ? true : false}"/>					
+				<core:Icon color="red" src="sap-icon://alert" visible="{= ${ProcurementProcesses>status} === 'Atrasado' ? true : false}"  />
             </HBox>
 			<Text text="{ProcurementProcesses>owner}" />
 			<Text text="{ProcurementProcesses>priority}" />
-			<Text text="{ProcurementProcesses>lastApprovalDate}"  />
-			<Text text="{ProcurementProcesses>estimatedProcessEndDate}" />
-			<Text text="{ProcurementProcesses>lastUpdate}" />
+			<Text text="{
+				path: 'ProcurementProcesses>lastApprovalDate',
+ 				type: 'sap.ui.model.type.Date',
+                formatOptions: {source: {pattern: 'yyyyMMddHHmmss'}, style: 'short'}
+              }"/>
+			<Text text="{
+				path: 'ProcurementProcesses>estimatedProcessEndDate',
+ 				type: 'sap.ui.model.type.Date',
+                formatOptions: {source: {pattern: 'yyyyMMddHHmmss'}, style: 'short'}
+              }"/>
+			<Text text="{
+				path: 'ProcurementProcesses>lastUpdate',
+ 				type: 'sap.ui.model.type.Date',
+                formatOptions: {source: {pattern: 'yyyyMMddHHmmss'}, style: 'short'}
+              }"/>
 		</ColumnListItem>
 	</Table>
 </core:FragmentDefinition>

@@ -3,92 +3,102 @@
     {
       "id": "SR 19419413643P",
       "taskName": "SR Criada",
-      "owner": "João da Silva",
+      "owner": "Adriana Rocha",
+      "status": "Concluído",
       "priority": "Normal",
-      "lastApprovalDate": "2021-04-01T21:05:12Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"
+      "lastApprovalDate": "20210411",
+      "estimatedProcessEndDate": "20210501",
+      "lastUpdate": "20210607"
     },
     {
       "id": "SR 19429413643P",
       "taskName": "Aprovações",
-      "owner": "João da Silva",
+      "owner": "Marcos Moraes",
+      "status": "Concluído",
       "priority": "Normal",
-      "lastApprovalDate": "2021-04-01T21:05:12Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"
+      "lastApprovalDate": "20210607",
+      "estimatedProcessEndDate": "20210411",
+      "lastUpdate": "20210607"
     },
     {
       "id": "SR 19419613643P",
       "taskName": "Suprimentos",
       "owner": "João da Silva",
+      "status": "Concluído",
       "priority": "Normal",
-      "lastApprovalDate": "2021-04-01T21:05:12Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"
+      "lastApprovalDate": "20210601",
+      "estimatedProcessEndDate": "20210401",
+      "lastUpdate": "20210607"
     },
     {
       "id": "SR 19419413623P",
       "taskName": "Compliance",
-      "owner": "João da Silva",
+      "owner": "Kleber Ferreira",
+      "status": "Concluído",
       "priority": "Normal",
-      "lastApprovalDate": "2021-04-01T21:05:12Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"
+      "lastApprovalDate": "20210207",
+      "estimatedProcessEndDate": "20210401",
+      "lastUpdate": "20210607"
     },
     {
       "id": "SR 19411413643P",
       "taskName": "Jurídico",
       "owner": "João da Silva",
+      "status": "Concluído",
       "priority": "Normal",
-      "lastApprovalDate": "2021-04-01T21:05:12Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"
+      "lastApprovalDate": "20210603",
+      "estimatedProcessEndDate": "20210401",
+      "lastUpdate": "20210607"
     },
     {
       "id": "SR 19419413649O",
       "taskName": "Aprovação da Área Solicitante",
-      "owner": "João da Silva",
+      "owner": "Carlos Augusto",
+      "status": "Em Andamento",
       "priority": "Normal",
-      "lastApprovalDate": "2021-04-01T21:05:12Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"
+      "lastApprovalDate": "20210523",
+      "estimatedProcessEndDate": "20210401",
+      "lastUpdate": "20210607"
     },
     {
       "id": "SR 19419413213P",
       "taskName": "Controladoria",
       "owner": "João da Silva",
-      "priority": "Normal",
-      "lastApprovalDate": "2021-04-01T21:05:12Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"
+      "status": "Atrasado",
+      "priority": "Urgente",
+      "lastApprovalDate": "20210401",
+      "estimatedProcessEndDate": "20210401",
+      "lastUpdate": "20210607"
     },   
     {
       "id": "SR 19419412243P",
       "taskName": "Trâmites de Assinatura",
-      "owner": "João da Silva",
+      "owner": "Tiago Machado",
+      "status": "Em Andamento",
       "priority": "Normal",
-      "lastApprovalDate": "2021-04-01T21:05:12Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"
+      "lastApprovalDate": "20220210401",
+      "estimatedProcessEndDate": "20210411",
+      "lastUpdate": "20210607"
     }, 
     {
       "id": "SR 19414413643P",
       "taskName": "Status Pedido ou Contrato ECC",
-      "owner": "João da Silva",
+      "owner": "Carlos Augusto",
+      "status": "Concluído",
       "priority": "Urgente",
-      "lastApprovalDate": "2021-04-01T21:05:12Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"
+      "lastApprovalDate": "20210401",
+      "estimatedProcessEndDate": "20210401",
+      "lastUpdate": "20210607"
     },          
     {
       "id": "SR 19419413124P",
       "taskName": "SR Criada",
       "owner": "João da Silva",
-      "priority": "Urgente",
-      "lastApprovalDate": "2021-05-15T14:39:00Z",
-      "estimatedProcessEndDate": "2021-12-29T10:00:00Z",
-      "lastUpdate": "2021-12-29T10:00:00Z"      
+      "status": "Atrasado",
+      "priority": "Normal",
+      "lastApprovalDate": "20210411",
+      "estimatedProcessEndDate": "20210401",
+      "lastUpdate": "20210607"      
     }
   ]
 }

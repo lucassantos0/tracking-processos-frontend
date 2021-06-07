@@ -18,6 +18,11 @@
 							<ToolbarSpacer/>
 							<Title level="H3" text="BRF - Tracking Processos" />
 							<ToolbarSpacer/>
+							<Button text="João da Silva" type="Transparent" press="handleUserNamePress" ariaHasPopup="Menu">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="NeverOverflow" />
+								</layoutData>
+							</Button>
 						</tnt:ToolHeader>
 						</tnt:header>
 						<tnt:sideContent>
@@ -39,7 +44,7 @@
 						</tnt:SideNavigation>
 						</tnt:sideContent>
 						<tnt:mainContents>
-						<NavContainer id="pageContainer" initialPage="dashboard">
+						<NavContainer id="pageContainer" initialPage="dashboard" class="sapUiSizeCompact">
 						<pages>
 							<ScrollContainer id="dashboard"	horizontal="false" vertical="true" height="100%">
 									<core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.tracking-processos-dashboard" type="XML"/>

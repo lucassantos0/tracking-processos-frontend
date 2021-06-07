@@ -6,6 +6,7 @@
     xmlns:card="sap.f.cards"
 	xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:l="sap.ui.layout">
+	<StandardListItem title="SLA Compliance" description="Concluído" highlight="Success" adaptTitleSize="false" infoStateInverted="true" type="Active" press="onSlaDetail"/>
 	<f:Card class="sapUiTinyMargin" width="auto" tooltip="Contato: João da Silva">
 		<f:header>
 			<card:Header title="Compliance" subtitle="Concluída" />

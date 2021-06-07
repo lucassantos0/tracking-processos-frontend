@@ -80,6 +80,10 @@
     "id": "integracao-ecc",
     "processo": "Integração ECC",
     "dias": 3
+  },{
+    "id": "compliance",
+    "processo": "Compliance",
+    "dias": 8
   }
   ]    
       

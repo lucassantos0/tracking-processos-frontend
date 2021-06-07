@@ -1,11 +1,13 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/core/Fragment"
+	"sap/ui/core/Fragment",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"	
 ],
 	/**
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
 	 */
-	function (Controller,Fragment) {
+	function (Controller,Fragment,Filter, FilterOperator) {
 		"use strict";
 
 		return Controller.extend("com.brf.trackingprocessos.trackingprocessosfrontend.controller.tracking-processos-home", {
@@ -35,8 +37,12 @@ sap.ui.define([
 					default:
 						var type = 'line';	
 						break;					  			
-				}				
-				var myChart = new Chart(ctx, {
+				}		
+				var myChart	= Chart.getChart(chart);
+				if ( myChart !== undefined ){
+					myChart.destroy();
+				}
+				myChart = new Chart(ctx, {
 					type: type,
 					data: {
 						labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -103,8 +109,59 @@ sap.ui.define([
 				this.byId("pageContainer").to(this.getView().createId("tracking"));
 			},
 
+			handleUserNamePress: function (event) {
+				var oPopover = new sap.m.Popover({
+					showHeader: false,
+					placement: sap.m.PlacementType.Bottom,
+					content: [
+						new sap.m.Button({
+							text: 'Suporte',
+							type: sap.m.ButtonType.Transparent
+						})
+					]
+				}).addStyleClass('sapMOTAPopover sapTntToolHeaderPopover');
+	
+				oPopover.openBy(event.getSource());
+			},
+
 			onSlaDetail: function (oEvent) {
 				this.openQuickView(oEvent);
+			},
+
+			onSelectMeusProcessos: function (oEvent) {				
+				var oList = this.byId("listProcessos");
+				var oBinding = oList.getBinding("items");				
+				var aFilter = oBinding.aFilters;
+				if(oEvent.oSource.mProperties.selected === true){
+					var sQuery = "João da Silva";					
+					aFilter.push(new Filter("owner", FilterOperator.Contains, sQuery));
+					oBinding.filter(aFilter);
+				}else{
+					for (var i = 0; i < aFilter.length; i++) {
+						if (aFilter[i].sPath === "owner"){ 
+							aFilter.splice(i,1);
+						}
+					}
+					oBinding.filter(aFilter);
+				}
+			},
+
+			onSelectEtapa: function (oEvent) {				
+				var oList = this.byId("listProcessos");
+				var oBinding = oList.getBinding("items");
+				var aFilter = oBinding.aFilters;
+				if(oEvent.oSource.mProperties.selectedKey !== "todos"){
+					var sQuery = oEvent.oSource.mProperties.selectedKey;					
+					aFilter.push(new Filter("taskName", FilterOperator.Contains, sQuery));
+					oBinding.filter(aFilter);
+				}else{
+					for (var i = 0; i < aFilter.length; i++) {
+						if (aFilter[i].sPath === "taskName"){ 
+							aFilter.splice(i,1);
+						}
+					}
+					oBinding.filter(aFilter);
+				}
 			},
 
 			openQuickView: function (oEvent) {
