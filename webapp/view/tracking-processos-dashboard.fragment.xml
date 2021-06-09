@@ -2,75 +2,49 @@
     xmlns:core="sap.ui.core"
 	xmlns:f="sap.f"
 	xmlns:l="sap.ui.layout"
+	xmlns:grid="sap.ui.layout.cssgrid"
 	xmlns="sap.m">
-	<f:GridList
-			id="SRS"
-			headerText="SR Criadas">
+	<f:GridList	id="SRS" headerText="SR Criadas">
+			<f:customLayout>
+				<grid:GridBoxLayout boxWidth="18rem" />
+			</f:customLayout>	
 			<f:GridListItem>
-				<VBox class="sapUiSmallMargin">
-					<layoutData>
-						<FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
-					</layoutData>
-					
-					<core:HTML id="myChart4" afterRendering="onRender" content="&lt;canvas id=&quot;myChart4&quot;&gt;&lt;/canvas&gt;"/>
-				</VBox>
+					<core:HTML id="myChart7" afterRendering="onRender" content="&lt;canvas id=&quot;myChart7&quot;&gt;&lt;/canvas&gt;"/>
 			</f:GridListItem>
 			<f:GridListItem>
-				<VBox class="sapUiSmallMargin">
-					<layoutData>
-						<FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
-					</layoutData>
-					<core:HTML id="myChart" afterRendering="onRender" content="&lt;canvas id=&quot;myChart&quot;&gt;&lt;/canvas&gt;"/>
-				</VBox>
-			</f:GridListItem>	
-			<f:GridListItem>
-				<VBox class="sapUiSmallMargin">
-					<layoutData>
-						<FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
-					</layoutData>
 					<core:HTML id="myChart2" afterRendering="onRender" content="&lt;canvas id=&quot;myChart2&quot;&gt;&lt;/canvas&gt;"/>
-				</VBox>
-			</f:GridListItem>						
-		</f:GridList>
-		<f:GridList
-			id="SLAS"
-			headerText="SLA">
-			<f:GridListItem>
-					<VBox class="sapUiSmallMargin">
-					<layoutData>
-						<FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
-					</layoutData>
-					<TileContent footer="Em Atraso">
-					<NumericContent value="15"
-						valueColor="Error"/>
-					</TileContent>
-					<TileContent footer="Em Atraso" class="sapUiSmallMargin">
-					<NumericContent value="15"
-						valueColor="Error"/>
-					</TileContent>
-				</VBox>				
 			</f:GridListItem>	
 			<f:GridListItem>
-					<VBox class="sapUiSmallMargin">
-					<layoutData>
-						<FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
-					</layoutData>
+					<core:HTML id="myChart3" afterRendering="onRender" content="&lt;canvas id=&quot;myChart3&quot;&gt;&lt;/canvas&gt;"/>
+			</f:GridListItem>						
+			<f:GridListItem>
+					<core:HTML id="myChart4" afterRendering="onRender" content="&lt;canvas id=&quot;myChart4&quot;&gt;&lt;/canvas&gt;"/>
+			</f:GridListItem>				
+		</f:GridList>
+		<f:GridList	id="SLAS" headerText="SLA">
+			<f:customLayout>
+				<grid:GridBoxLayout boxWidth="24rem" />
+			</f:customLayout>			
+			<f:GridListItem>
+					<TileContent footer="Total">
+					<NumericContent value="22" icon="sap-icon://line-chart"/>
+					</TileContent>
+					<TileContent footer="Concluída">
+					<NumericContent value="10" valueColor="Good" icon="sap-icon://message-success"/>
+					</TileContent>		
+					<TileContent footer="Em andamento">
+					<NumericContent value="8" valueColor="Critical" icon="sap-icon://process"/>
+					</TileContent>									
 					<TileContent footer="Em Atraso">
-					<NumericContent value="15"
-						valueColor="Error"/>
-					</TileContent>
-					<TileContent footer="Em Atraso" class="sapUiSmallMargin">
-					<NumericContent value="15"
-						valueColor="Error"/>
-					</TileContent>
-				</VBox>				
+					<NumericContent value="4" valueColor="Error" icon="sap-icon://decline"/>
+					</TileContent>		
 			</f:GridListItem>																																
 			<f:GridListItem>
 				<VBox class="sapUiSmallMargin">
 					<layoutData>
 						<FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
 					</layoutData>
-					<core:HTML id="myChart5" afterRendering="onRender" content="&lt;canvas id=&quot;myChart5&quot;&gt;&lt;/canvas&gt;"/>
+					<core:HTML id="myChart" afterRendering="onRender" content="&lt;canvas id=&quot;myChart&quot;&gt;&lt;/canvas&gt;"/>
 				</VBox>
 			</f:GridListItem>	
 			<f:GridListItem>

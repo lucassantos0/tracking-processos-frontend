@@ -1,0 +1,35 @@
+{
+  "detailList": [
+      { "id": "Doc2590640759",
+         "srcriada":{      
+          "status": "Concluído",
+          "descricao":"B1 - Aprovação do Gestor",
+          "data": "20210411"
+         },
+         "aprovacoes":{      
+
+         },
+         "suprimentos":{      
+
+         },
+         "compliance":{      
+
+         },
+         "juridico":{      
+
+         },
+         "areasolicitante":{      
+
+         },
+         "controladoria":{      
+
+         },
+         "assinatura":{      
+
+         },
+         "integracaoecc":{      
+           
+         }
+      } 
+  ]
+}

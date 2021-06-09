@@ -13,12 +13,13 @@
 		<headerToolbar>
 			<OverflowToolbar>
 				<content>
-					<Title text="{i18n>mainlist-title}" level="H2"/>
+					<Label text="{i18n>mainlist-estimatedenddate}"/>
+					<DateRangeSelection id="filtroData" displayFormat="dd/MM/yyyy" width="13em" change="onDateRange" />
 					<ToolbarSpacer />
-					<DateRangeSelection id="filtroDataCriacao" displayFormat="dd/MM/yyyy" width="13em" />
-					<CheckBox text="{i18n>mainlist-meusprocessos}" select="onSelectMeusProcessos"/>
+					<ToolbarSpacer />
+					<CheckBox id="ckMeusProcessos" text="{i18n>mainlist-meusprocessos}" select="onSelectMeusProcessos"/>
 					<Label text="Etapa"/>	
-					<Select	forceSelection="false" selectedKey="todos" width="9em" change="onSelectEtapa">
+					<Select	id="slEtapa" forceSelection="false" selectedKey="todos" width="9em" change="onSelectEtapa">
 						<core:Item key="todos" text="" />
 						<core:Item key="SR Criada" text="{i18n>mainlist-srcriada}" />
 						<core:Item key="Aprovações" text="{i18n>mainlist-aprovacoes}" />
@@ -31,27 +32,32 @@
 						<core:Item key="Status Pedido ou Contrato ECC" text="{i18n>mainlist-ecc}"/>					
 					</Select>
 					<Label text="Status"/>	
-					<Select	forceSelection="false" selectedKey="todos" width="10em">
+					<Select	id="slStatus" forceSelection="false" selectedKey="todos" width="10em" change="onSelectStatus">
 						<core:Item key="todos" text="" />
-						<core:Item key="concluido" text="{i18n>mainlist-concluido}" />
-						<core:Item key="emandamento" text="{i18n>mainlist-emandamento}" />
-						<core:Item key="atrasado" text="{i18n>mainlist-atrasado}" />				
+						<core:Item key="Concluído" text="{i18n>mainlist-concluido}" />
+						<core:Item key="Em Andamento" text="{i18n>mainlist-emandamento}" />
+						<core:Item key="Atrasado" text="{i18n>mainlist-atrasado}" />				
 					</Select>	
-					<CheckBox text="{i18n>mainlist-urgente}"
-						select="onSelect"/>	
-					<Button text="Limpar Filtros" type="Transparent" press="oNP"/>									
+					<CheckBox id="ckUrgente" text="{i18n>mainlist-urgente}"
+						select="onSelectUrgente"/>	
+					<Button text="Limpar Filtros" type="Transparent" press="onLimparFiltros"/>									
 				</content>
 			</OverflowToolbar>
 		</headerToolbar>
 		<columns>
-			<Column mergeDuplicates="true">
+			<Column>
 				<header>
 					<Text text="{i18n>mainlist-process}" />
 				</header>
 			</Column>
-			<Column width="20%">
+			<Column>
 				<header>
-					<Text text="{i18n>mainlist-taskname}" />
+					<Text text="{i18n>mainlist-description}" />
+				</header>
+			</Column>			
+			<Column>
+				<header>
+					<Text text="{i18n>mainlist-actualtask}" />
 				</header>
 			</Column>
 			<Column >
@@ -59,7 +65,7 @@
 					<Text text="{i18n>mainlist-responsavel}" />
 				</header>
 			</Column>			
-			<Column width="8%" hAlign="Center">
+			<Column hAlign="Center">
 				<header>
 					<Text text="{i18n>mainlist-priority}" />
 				</header>
@@ -69,12 +75,12 @@
 					<Text text="{i18n>mainlist-lastapprovaldate}" />
 				</header>
 			</Column>
-			<Column width="15%" hAlign="Center">
+			<Column hAlign="Center">
 				<header>
 					<Text text="{i18n>mainlist-estimatedenddate}" />
 				</header>
 			</Column>
-			<Column width="15%" hAlign="Center">
+			<Column hAlign="Center">
 				<header>
 					<Text text="{i18n>mainlist-lastupdate}" />
 				</header>
@@ -82,15 +88,16 @@
 		</columns>
 		<ColumnListItem type="Navigation" press="onPressItem">
 			<Text text="{ProcurementProcesses>id}" />
+			<Text text="{ProcurementProcesses>description}" />
             <HBox>                
-                <ObjectStatus class="sapUiTinyMarginEnd" text="{ProcurementProcesses>taskName}" state="{= ${ProcurementProcesses>status} === 'Atrasado' ? 'Error' : 'Success' }" 
+                <ObjectStatus class="sapUiTinyMarginEnd" text="{ProcurementProcesses>actualTask}" state="{= ${ProcurementProcesses>status} === 'Atrasado' ? 'Error' : 'Success' }" 
 				visible="{= ${ProcurementProcesses>status} !== 'Em Andamento' ? true : false}"/>	
-                <ObjectStatus class="sapUiTinyMarginEnd" text="{ProcurementProcesses>taskName}" state="{= ${ProcurementProcesses>status} === 'Em Andamento' ? 'Warning' : 'Success' }" 
+                <ObjectStatus class="sapUiTinyMarginEnd" text="{ProcurementProcesses>actualTask}" state="{= ${ProcurementProcesses>status} === 'Em Andamento' ? 'Warning' : 'Success' }" 
 				visible="{= ${ProcurementProcesses>status} === 'Em Andamento' ? true : false}"/>					
 				<core:Icon color="red" src="sap-icon://alert" visible="{= ${ProcurementProcesses>status} === 'Atrasado' ? true : false}"  />
             </HBox>
 			<Text text="{ProcurementProcesses>owner}" />
-			<Text text="{ProcurementProcesses>priority}" />
+			<ObjectStatus text="{ProcurementProcesses>priority}" state="{= ${ProcurementProcesses>priority} === 'Urgente' ? 'Error' : 'None' }"/>	
 			<Text text="{
 				path: 'ProcurementProcesses>lastApprovalDate',
  				type: 'sap.ui.model.type.Date',

@@ -13,7 +13,21 @@ sap.ui.define([
 		return Controller.extend("com.brf.trackingprocessos.trackingprocessosfrontend.controller.tracking-processos-home", {
 			
 			onInit  : function() {							
-				
+				this.setInitialDateRange();			
+			},
+
+			setInitialDateRange: function(){
+				var aFilter = [];
+				var oList = this.byId("listProcessos");
+				var oBinding = oList.getBinding("items");	
+				var firstDate = new Date;
+				firstDate.setMonth( firstDate.getMonth() - 4 );
+				this.getView().byId("filtroData").setDateValue( firstDate );
+				this.getView().byId("filtroData").setSecondDateValue( new Date );
+				var sDateIni = this.getView().byId("filtroData").getDateValue().toISOString().split('T')[0].replace(/-/g,'');
+				var sDateFim = this.getView().byId("filtroData").getSecondDateValue().toISOString().split('T')[0].replace(/-/g,'');	
+				aFilter.push(new Filter("estimatedProcessEndDate", FilterOperator.BT, sDateIni,sDateFim));
+				oBinding.filter(aFilter);	
 			},
 
 			onRender: function(oEvent) {
@@ -128,20 +142,53 @@ sap.ui.define([
 				this.openQuickView(oEvent);
 			},
 
+			onDateRange: function(oEvent){
+				var oList = this.byId("listProcessos");
+				var oBinding = oList.getBinding("items");				
+				var aFilter = oBinding.aFilters;
+				for (var i = 0; i < aFilter.length; i++) {
+					if (aFilter[i].sPath === "estimatedProcessEndDate"){ 
+						aFilter.splice(i,1);
+					}
+				}	
+				var sDateIni = this.getView().byId("filtroData").getDateValue().toISOString().split('T')[0].replace(/-/g,'');
+				var sDateFim = this.getView().byId("filtroData").getSecondDateValue().toISOString().split('T')[0].replace(/-/g,'');	
+				aFilter.push(new Filter("estimatedProcessEndDate", FilterOperator.BT, sDateIni,sDateFim));
+				oBinding.filter(aFilter);
+			},
+
 			onSelectMeusProcessos: function (oEvent) {				
 				var oList = this.byId("listProcessos");
 				var oBinding = oList.getBinding("items");				
 				var aFilter = oBinding.aFilters;
+				for (var i = 0; i < aFilter.length; i++) {
+					if (aFilter[i].sPath === "owner"){ 
+						aFilter.splice(i,1);
+					}
+				}				
 				if(oEvent.oSource.mProperties.selected === true){
 					var sQuery = "João da Silva";					
 					aFilter.push(new Filter("owner", FilterOperator.Contains, sQuery));
 					oBinding.filter(aFilter);
-				}else{
-					for (var i = 0; i < aFilter.length; i++) {
-						if (aFilter[i].sPath === "owner"){ 
-							aFilter.splice(i,1);
-						}
+				}else{	
+					oBinding.filter(aFilter);
+				}
+			},
+
+			onSelectUrgente: function (oEvent) {				
+				var oList = this.byId("listProcessos");
+				var oBinding = oList.getBinding("items");				
+				var aFilter = oBinding.aFilters;
+				for (var i = 0; i < aFilter.length; i++) {
+					if (aFilter[i].sPath === "priority"){ 
+						aFilter.splice(i,1);
 					}
+				}				
+				if(oEvent.oSource.mProperties.selected === true){
+					var sQuery = "Urgente";					
+					aFilter.push(new Filter("priority", FilterOperator.Contains, sQuery));
+					oBinding.filter(aFilter);
+				}else{	
 					oBinding.filter(aFilter);
 				}
 			},
@@ -150,18 +197,48 @@ sap.ui.define([
 				var oList = this.byId("listProcessos");
 				var oBinding = oList.getBinding("items");
 				var aFilter = oBinding.aFilters;
+				for (var i = 0; i < aFilter.length; i++) {
+					if (aFilter[i].sPath === "actualTask"){ 
+						aFilter.splice(i,1);
+					}
+				}				
 				if(oEvent.oSource.mProperties.selectedKey !== "todos"){
 					var sQuery = oEvent.oSource.mProperties.selectedKey;					
-					aFilter.push(new Filter("taskName", FilterOperator.Contains, sQuery));
+					aFilter.push(new Filter("actualTask", FilterOperator.Contains, sQuery));
 					oBinding.filter(aFilter);
 				}else{
-					for (var i = 0; i < aFilter.length; i++) {
-						if (aFilter[i].sPath === "taskName"){ 
-							aFilter.splice(i,1);
-						}
-					}
 					oBinding.filter(aFilter);
 				}
+			},
+
+			onSelectStatus: function (oEvent) {				
+				var oList = this.byId("listProcessos");
+				var oBinding = oList.getBinding("items");
+				var aFilter = oBinding.aFilters;
+				for (var i = 0; i < aFilter.length; i++) {
+					if (aFilter[i].sPath === "status"){ 
+						aFilter.splice(i,1);
+					}
+				}				
+				if(oEvent.oSource.mProperties.selectedKey !== "todos"){
+					var sQuery = oEvent.oSource.mProperties.selectedKey;					
+					aFilter.push(new Filter("status", FilterOperator.Contains, sQuery));
+					oBinding.filter(aFilter);
+				}else{
+					oBinding.filter(aFilter);
+				}
+			},
+
+			onLimparFiltros: function (oEvent) {
+				this.byId("ckMeusProcessos").setSelected(false);				
+				this.byId("ckUrgente").setSelected(false);	
+				this.byId("slEtapa").setSelectedKey("todos");	
+				this.byId("slStatus").setSelectedKey("todos");
+				var oList = this.byId("listProcessos");
+				var oBinding = oList.getBinding("items");
+				var aFilter = [];
+				oBinding.filter(aFilter);
+				this.setInitialDateRange();				
 			},
 
 			openQuickView: function (oEvent) {

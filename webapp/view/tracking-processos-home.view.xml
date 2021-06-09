@@ -15,7 +15,8 @@
 									<OverflowToolbarLayoutData priority="NeverOverflow" />
 								</layoutData>
 							</Button>
-							<ToolbarSpacer/>
+							<Image src="../img/logo.png"/>
+							<ToolbarSpacer/>							
 							<Title level="H3" text="BRF - Tracking Processos" />
 							<ToolbarSpacer/>
 							<Button text="João da Silva" type="Transparent" press="handleUserNamePress" ariaHasPopup="Menu">
