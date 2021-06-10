@@ -1,35 +1,192 @@
 {
-  "detailList": [
-      { "id": "Doc2590640759",
-         "srcriada":{      
-          "status": "Concluído",
-          "descricao":"B1 - Aprovação do Gestor",
-          "data": "20210411"
-         },
-         "aprovacoes":{      
-
-         },
-         "suprimentos":{      
-
-         },
-         "compliance":{      
-
-         },
-         "juridico":{      
-
-         },
-         "areasolicitante":{      
-
-         },
-         "controladoria":{      
-
-         },
-         "assinatura":{      
-
-         },
-         "integracaoecc":{      
-           
-         }
-      } 
+  "detailList": [{
+      "id": "Doc2590640759",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210411",
+        "contato": "Carlos"
+      },
+      "aprovacoes": {},
+      "suprimentos": {},
+      "integracaoecc": {}
+    },
+    {
+      "id": "Doc2590640725",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210511",
+        "contato": "José"
+      },
+      "aprovacoes": {
+        "status": "Em Andamento",
+        "contato": "Carlos",
+        "aprovadores": [{
+            "status": "Concluído",
+            "descricao": "B1 - Aprovação do Gestor",
+            "data": "20210511",
+            "user": "João da Silva",
+            "comment": "Aprovado sem ressalvas" 
+          },
+          {
+            "status": "Em Andamento",
+            "descricao": "C1 - Gestor do Pacote",
+            "data": "",
+            "user": "Marcos Moraes",
+            "comment": ""
+          },
+          {
+            "status": "",
+            "descricao": "C1 - Gestor do Pacote",
+            "data": "",
+            "user": "Adriano",
+            "comment": ""
+          },
+          {
+            "status": "",
+            "descricao": "D - Área Técnica",
+            "data": "",
+            "user": "Carlos",
+            "comment": ""
+          },
+          {
+            "status": "",
+            "descricao": "D1 - IT Finance",
+            "data": "",
+            "user": "Patricia",
+            "comment": ""
+          }
+        ]
+      },
+      "suprimentos": {},
+      "integracaoecc": {}
+    },
+    {
+      "id": "Doc2588923060",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210411",
+        "contato": "Carlos"
+      },
+      "aprovacoes": {},
+      "suprimentos": {},
+      "integracaoecc": {}
+    },
+    {
+      "id": "Doc2590698730",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210411",
+        "contato": "Carlos"
+      },
+      "aprovacoes": {},
+      "suprimentos": {},
+      "compliance": {},
+      "integracaoecc": {}
+    }, {
+      "id": "Doc2590698695",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210411",
+        "contato": "Carlos"
+      },
+      "aprovacoes": {},
+      "suprimentos": {},
+      "compliance": {},
+      "juridico": {},
+      "areasolicitante": {},
+      "controladoria": {},
+      "assinatura": {},
+      "integracaoecc": {}
+    },
+    {
+      "id": "Doc2588939242",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210411",
+        "contato": "Carlos"
+      },
+      "aprovacoes": {},
+      "suprimentos": {},
+      "compliance": {},
+      "juridico": {},
+      "areasolicitante": {},
+      "controladoria": {},
+      "assinatura": {},
+      "integracaoecc": {}
+    },
+    {
+      "id": "Doc2588939206",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210411",
+        "contato": "Carlos"
+      },
+      "aprovacoes": {},
+      "suprimentos": {},
+      "compliance": {},
+      "juridico": {},
+      "areasolicitante": {},
+      "controladoria": {},
+      "assinatura": {},
+      "integracaoecc": {}
+    },
+    {
+      "id": "Doc2588957067",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210411",
+        "contato": "Carlos"
+      },
+      "aprovacoes": {},
+      "suprimentos": {},
+      "compliance": {},
+      "juridico": {},
+      "areasolicitante": {},
+      "controladoria": {},
+      "assinatura": {},
+      "integracaoecc": {}
+    },
+    {
+      "id": "Doc2590698763",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210411",
+        "contato": "Carlos"
+      },
+      "aprovacoes": {},
+      "suprimentos": {},
+      "compliance": {},
+      "juridico": {},
+      "areasolicitante": {},
+      "controladoria": {},
+      "assinatura": {},
+      "integracaoecc": {}
+    },
+    {
+      "id": "Doc2590714198",
+      "srcriada": {
+        "status": "Concluído",
+        "descricao": "B1 - Aprovação do Gestor",
+        "data": "20210411",
+        "contato": "Carlos"
+      },
+      "aprovacoes": {},
+      "suprimentos": {},
+      "compliance": {},
+      "juridico": {},
+      "areasolicitante": {},
+      "controladoria": {},
+      "assinatura": {},
+      "integracaoecc": {}
+    }
   ]
 }

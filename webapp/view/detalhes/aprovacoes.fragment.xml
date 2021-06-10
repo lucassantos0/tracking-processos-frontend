@@ -6,17 +6,25 @@
     xmlns:card="sap.f.cards"
 	xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:l="sap.ui.layout">
-	<f:Card class="sapUiTinyMargin" width="auto" tooltip="Contato: João da Silva">
+	<f:Card class="sapUiTinyMargin" width="400px" tooltip="Contato: João da Silva">
 		<f:header>
-			<card:Header title="Tarefa Aprovações" subtitle="Concluído" />
+			<card:Header title="Tarefa Aprovações" statusText="{Details>/aprovacoes/status}" />
 		</f:header>
 		<f:content>
-  			<VBox>
-				<StandardListItem title="B1 - Gestor da Área - João da Silva" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
-				<StandardListItem title="C1 - Gestor do Pacote - Adriano" description="Data: 04/06/2021" highlight="Error" adaptTitleSize="true" infoStateInverted="true" />				
-				<StandardListItem title="D - Área Técnica - Carlos" description="" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" />				
-				<StandardListItem title="D1 - IT Finance - Patricia" description="" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" />				
-			</VBox>
+			<List id="listAprovadores" items="{ path: 'Details>/aprovacoes/aprovadores/' }">			
+				<items> 
+					<StandardListItem title="{Details>descricao}" 
+						description="{Details>user}" 
+						info="{ path: 'Details>data', type: 'sap.ui.model.type.Date', formatOptions: {source: {pattern: 'yyyyMMddHHmmss'}, style: 'short' } }"
+						highlight="{ path: 'Details>status', formatter: '.formatter.formatStatusState' }" icon="{ path: 'Details>status', color:'#9dd53a', formatter: '.formatter.formatIconAprovador' }"
+						iconInset="false" iconDensityAware="false"
+						type="Active" press="onCommentTask">
+						<customData>
+							<core:CustomData writeToDom="true" key="iconColor" value="{= ${Details>status}}" />
+						</customData>
+					</StandardListItem>
+				</items>
+			</List>	
 		</f:content>
 	</f:Card>
 </core:FragmentDefinition>

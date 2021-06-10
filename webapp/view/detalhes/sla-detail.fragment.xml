@@ -2,8 +2,7 @@
 	<QuickView
 		id="quickView"
 		placement="Bottom">
-		<QuickViewPage			title="Detalhes do SLA"
-			description="Aceite em andamento">
+		<QuickViewPage title="Detalhes do SLA" description="Aceite em andamento">
 			<QuickViewGroup>
 				<QuickViewGroupElement label="Início do SLA" value="01.06.2021"/>
                 <QuickViewGroupElement label="Prazo" value="10 dias"/>

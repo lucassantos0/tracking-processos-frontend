@@ -16,7 +16,7 @@
       "description": "Notebook Lote 01",
       "actualTask": "Aprovações",
       "owner": "Marcos Moraes",
-      "status": "Concluído",
+      "status": "Em Andamento",
       "priority": "Normal",
       "lastApprovalDate": "20210607",
       "estimatedProcessEndDate": "20210411",
@@ -102,7 +102,7 @@
     {
       "id": "Doc2590714198",
       "description": "Compra de Refrigeradores",
-      "actualTask": "SR Criada",
+      "actualTask": "Status Pedido ou Contrato ECC",
       "owner": "João da Silva",
       "status": "Atrasado",
       "priority": "Normal",

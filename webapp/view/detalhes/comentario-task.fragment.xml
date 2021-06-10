@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<QuickView>
+		<QuickViewPage id="quickViewComment" title="">
+			<QuickViewGroup>
+				<QuickViewGroupElement value="{Comment>/comment}"/>
+			</QuickViewGroup>
+		</QuickViewPage>
+	</QuickView>
+</core:FragmentDefinition>

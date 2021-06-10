@@ -2,16 +2,17 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/core/Fragment",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"	
+	"sap/ui/model/FilterOperator",
+	"com/brf/trackingprocessos/trackingprocessosfrontend/model/formatter"
 ],
 	/**
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
 	 */
-	function (Controller,Fragment,Filter, FilterOperator) {
+	function (Controller,Fragment,Filter, FilterOperator,formatter) {
 		"use strict";
 
 		return Controller.extend("com.brf.trackingprocessos.trackingprocessosfrontend.controller.tracking-processos-home", {
-			
+			formatter: formatter,
 			onInit  : function() {							
 				this.setInitialDateRange();			
 			},
@@ -95,9 +96,17 @@ sap.ui.define([
 			},
 
 			onPressItem: function (oEvent)  {
+				var oDataCabec = this.getView().getModel("ProcurementProcesses").getObject(oEvent.oSource.getBindingContextPath());
+				var oDataDetail = this.getView().getModel("ProcessDetails").oData.detailList;
+				for ( var i = 0; i < oDataDetail.length; i++) {
+					if( oDataCabec.id === oDataDetail[i].id ){
+						this.getView().setModel(new sap.ui.model.json.JSONModel(oDataCabec),"Header");
+						this.getView().setModel(new sap.ui.model.json.JSONModel(oDataDetail[i]),"Details");
+						break;
+					} 				
+				}
 				this.byId("pageContainer").to(this.getView().createId("detalhes"));
 			},
-
 			
 			onSideNavButtonPress: function () {
 				var oToolPage = this.byId("toolPage");
@@ -143,6 +152,14 @@ sap.ui.define([
 
 			onSlaDetail: function (oEvent) {
 				this.openQuickView(oEvent);
+			},
+
+			onCommentTask: function (oEvent) {
+				var oDataComment = this.getView().getModel("Details").getObject(oEvent.oSource.getBindingContextPath());
+				this.getView().setModel(new sap.ui.model.json.JSONModel(oDataComment),"Comment");
+				if(oDataComment.comment !== ""){
+					this.openQuickViewComment(oEvent);
+				}				
 			},
 
 			onDateRange: function(oEvent){
@@ -255,12 +272,33 @@ sap.ui.define([
 				this.byId("ckUrgente").setSelected(false);	
 				this.byId("slEtapa").setSelectedKey("todos");	
 				this.byId("slStatus").setSelectedKey("todos");
+				this.byId("inpDoc").setValue("");
 				var oList = this.byId("listProcessos");
 				var oBinding = oList.getBinding("items");
 				var aFilter = [];
 				oBinding.filter(aFilter);
 				this.setInitialDateRange();				
 			},
+
+			openQuickViewComment: function (oEvent) {
+
+				var oButton = oEvent.getSource(),
+					oView = this.getView();
+
+				if (!this._pQuickViewComment) {
+					this._pQuickViewComment = Fragment.load({
+						id: oView.getId(),
+						name: "com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.comentario-task",
+						controller: this
+					}).then(function (oQuickView) {
+						oView.addDependent(oQuickView);
+						return oQuickView;
+					});
+				}
+				this._pQuickViewComment.then(function (oQuickView){
+					oQuickView.openBy(oButton);
+				});
+			},			
 
 			openQuickView: function (oEvent) {
 

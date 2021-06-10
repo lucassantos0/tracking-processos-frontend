@@ -6,17 +6,16 @@
     xmlns:card="sap.f.cards"
 	xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:l="sap.ui.layout">
-	<f:Card class="sapUiTinyMargin" width="400px" tooltip="Contato: João da Silva">
+	<f:Card class="sapUiTinyMargin" width="300px" tooltip="Contato: {Details>/srcriada/contato}">
 		<f:header>
-			<card:Header title="Tarefa SR Criada" statusText="Concluída"/>
+			<card:Header title="Tarefa SR Criada" statusText="{Details>/srcriada/status}"/>
 		</f:header>
 		<f:content>
   			<VBox>
-			  	<FlexBox alignItems="Center" justifyContent="Start">
-					<StandardListItem title="B1 - Aprovação do Gestor" description="Data: 03/06/2021" highlight="Success" icon="sap-icon://arrow-right"/>
-					<core:Icon	src="sap-icon://write-new-document"/>	
-					<Text class="sapUiTinyMarginBegin" text="Teste Texto"/>	
-				</FlexBox>
+					<StandardListItem title="{Details>/srcriada/descricao}" 
+					description="Data: {	path: 'Details>/srcriada/data', type: 'sap.ui.model.type.Date', formatOptions: {source: {pattern: 'yyyyMMddHHmmss'}, style: 'short' } }" 
+					highlight="{ path: 'Details>/srcriada/status', formatter: '.formatter.formatStatusState' }" 
+					icon="sap-icon://arrow-right"/>
 			</VBox>
 		</f:content>
 	</f:Card>

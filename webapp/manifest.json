@@ -76,7 +76,13 @@
         "settings": {},
         "preload": true,
         "uri": "model/tracking-sla-config-mock.json"
-      }      
+      },
+      "ProcessDetails": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {},
+        "preload": true,
+        "uri": "model/tracking-details-mock.json"
+      }             
     },
     "resources": {
       "css": [

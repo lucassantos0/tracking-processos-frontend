@@ -15,7 +15,7 @@
 				<content>
 					<DateRangeSelection id="filtroData" displayFormat="dd/MM/yyyy" width="13em" change="onDateRange" />
 					<ToolbarSpacer />
-					<SearchField width="10em" placeholder="Processo" liveChange="onFiltrarProcesso"/>
+					<SearchField id="inpDoc" width="10em" placeholder="Processo" liveChange="onFiltrarProcesso"/>
 					<ToolbarSpacer />					
 					<CheckBox id="ckMeusProcessos" text="{i18n>mainlist-meusprocessos}" select="onSelectMeusProcessos"/>
 					<Label text="Etapa"/>	
@@ -90,10 +90,7 @@
 			<Text text="{ProcurementProcesses>id}" />
 			<Text text="{ProcurementProcesses>description}" />
             <HBox>                
-                <ObjectStatus class="sapUiTinyMarginEnd" text="{ProcurementProcesses>actualTask}" state="{= ${ProcurementProcesses>status} === 'Atrasado' ? 'Error' : 'Success' }" 
-				visible="{= ${ProcurementProcesses>status} !== 'Em Andamento' ? true : false}"/>	
-                <ObjectStatus class="sapUiTinyMarginEnd" text="{ProcurementProcesses>actualTask}" state="{= ${ProcurementProcesses>status} === 'Em Andamento' ? 'Warning' : 'Success' }" 
-				visible="{= ${ProcurementProcesses>status} === 'Em Andamento' ? true : false}"/>					
+                <ObjectStatus class="sapUiTinyMarginEnd" text="{ProcurementProcesses>actualTask}" state="{ path: 'ProcurementProcesses>status', formatter: '.formatter.formatStatusState' }"/>
 				<core:Icon color="red" src="sap-icon://alert" visible="{= ${ProcurementProcesses>status} === 'Atrasado' ? true : false}"  />
             </HBox>
 			<Text text="{ProcurementProcesses>owner}" />

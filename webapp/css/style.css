@@ -14,3 +14,13 @@
 .critical-task{
     background-color: orangered;
 }
+
+[data-iconColor='Concluído'] .sapUiIcon {
+    color: green !important; 
+}
+[data-iconColor='Em Andamento'] .sapUiIcon{
+    color: orange !important;
+}
+[data-iconColor='Atrasado'] .sapUiIcon{
+    color: orange !important;
+}

@@ -9,20 +9,17 @@
             id="oh1"
             responsive="true"
             icon="sap-icon://request"
-            iconAlt="SR 19419413643P"
-            title="SR 19419413643P"
-            number="3.599,00"     
-            intro="Compra de Notebook"
-            numberUnit="BRL"                       
-            class="sapUiResponsivePadding--header" >
-            <ObjectAttribute title="Demanda" text="Urgente" />
-            <ObjectAttribute title="Ultima atualização" text="2021-12-29T10:00:00Z" /> 
-            <ObjectAttribute title="Data da última aprovação" text="2021-04-01T21:05:12Z" />
-            <ObjectAttribute title="Data prevista conclusão" text="2021-12-29T10:00:00Z" />                                                        
+            iconAlt="{Header>/id}"
+            title="{Header>/id}"
+            intro="{Header>/description}"                     
+            class="sapUiResponsivePadding--header" >            
+            <ObjectAttribute title="Data da última aprovação" text="{ path: 'Header>/lastApprovalDate', type: 'sap.ui.model.type.Date', formatOptions: {source: {pattern: 'yyyyMMddHHmmss'}, style: 'short' } }" />            
+            <ObjectAttribute title="Data prevista conclusão" text="{ path: 'Header>/estimatedProcessEndDate', type: 'sap.ui.model.type.Date', formatOptions: {source: {pattern: 'yyyyMMddHHmmss'}, style: 'short' } }" />                                                        
+            <ObjectAttribute title="Ultima atualização" text="{	path: 'Header>/lastUpdate', type: 'sap.ui.model.type.Date', formatOptions: {source: {pattern: 'yyyyMMddHHmmss'}, style: 'short' } }" />             
             <statuses>
-                <ObjectStatus
-                    text="Status Pedido ou Contrato ECC"
-                    state="Warning" />
+                <ObjectStatus title="Demanda" text="{Header>/priority}" state="{= ${Header>/priority} === 'Urgente' ? 'Error' : 'None' }" />
+                <ObjectStatus title="Etapa Atual" text="{Header>/actualTask}" state="{ path: 'Header>/status', formatter: '.formatter.formatStatusState' }"/>	
+                <ObjectStatus title="Responsável" text="{Header>/owner}"/>
             </statuses>                        
             <headerContainer>
                 <IconTabBar
@@ -31,39 +28,65 @@
                     upperCase="true"
                     class="sapUiResponsiveContentPadding">
                     <items>
-                        <IconTabFilter icon="sap-icon://create" iconColor="Positive" text="SR Criada">
+
+                        <IconTabFilter icon="sap-icon://create" iconColor="{ path: 'Details>/srcriada/status', formatter: '.formatter.formatStatusIconColor' }" 
+                            text="SR Criada" visible="{= ${Details>/srcriada} ? true : false }">
                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.srcriada" type="XML"/>
                         </IconTabFilter>
-                        <IconTabSeparator icon="sap-icon://open-command-field" />                                            
-                        <IconTabFilter icon="sap-icon://employee-approvals" iconColor="Positive" text="Aprovações" count="4">                                    
+
+                        <IconTabSeparator icon="sap-icon://open-command-field" visible="{= ${Details>/srcriada} ? true : false }"/>   
+
+                        <IconTabFilter icon="sap-icon://employee-approvals" iconColor="{ path: 'Details>/aprovacoes/status', formatter: '.formatter.formatStatusIconColor' }" 
+                            text="Aprovações" count="4" visible="{= ${Details>/aprovacoes} ? true : false }">                                    
                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.aprovacoes" type="XML"/>
                         </IconTabFilter>
-                        <IconTabSeparator icon="sap-icon://open-command-field" />
-                        <IconTabFilter icon="sap-icon://supplier" iconColor="Critical" text="Suprimentos">
+
+                        <IconTabSeparator icon="sap-icon://open-command-field" visible="{= ${Details>/aprovacoes} ? true : false }"/>
+
+                        <IconTabFilter icon="sap-icon://supplier" iconColor="{ path: 'Details>/suprimentos/status', formatter: '.formatter.formatStatusIconColor' }" 
+                            text="Suprimentos" visible="{= ${Details>/suprimentos} ? true : false }">
                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.suprimentos" type="XML"/>
                         </IconTabFilter>
-                        <IconTabSeparator icon="sap-icon://open-command-field" />
-                        <IconTabFilter icon="sap-icon://tree" iconColor="Positive" text="Compliance">
+
+                        <IconTabSeparator icon="sap-icon://open-command-field" visible="{= ${Details>/suprimentos} ? true : false }"/>
+
+                        <IconTabFilter icon="sap-icon://tree" iconColor="{ path: 'Details>/compliance/status', formatter: '.formatter.formatStatusIconColor' }" 
+                            text="Compliance" visible="{= ${Details>/compliance} ? true : false }">
                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.compliance" type="XML"/>                                    
                         </IconTabFilter>
-                        <IconTabSeparator icon="sap-icon://open-command-field" />
-                        <IconTabFilter icon="sap-icon://compare" iconColor="Negative" text="Jurídico">
+
+                        <IconTabSeparator icon="sap-icon://open-command-field" visible="{= ${Details>/compliance} ? true : false }"/>
+
+                        <IconTabFilter icon="sap-icon://compare" iconColor="{ path: 'Details>/juridico/status', formatter: '.formatter.formatStatusIconColor' }" 
+                            text="Jurídico" visible="{= ${Details>/juridico} ? true : false }">
                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.juridico" type="XML"/>                                                                            
                         </IconTabFilter>
-                        <IconTabSeparator icon="sap-icon://open-command-field" />
-                        <IconTabFilter icon="sap-icon://approvals" iconColor="Positive" text="Área Solicitante">                                    
+
+                        <IconTabSeparator icon="sap-icon://open-command-field" visible="{= ${Details>/juridico} ? true : false }"/>
+
+                        <IconTabFilter icon="sap-icon://approvals" iconColor="{ path: 'Details>/areasolicitante/status', formatter: '.formatter.formatStatusIconColor' }" 
+                            text="Área Solicitante" visible="{= ${Details>/areasolicitante} ? true : false }">                                    
                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.area-solicitante" type="XML"/>
                         </IconTabFilter>
-                        <IconTabSeparator icon="sap-icon://open-command-field" />
-                        <IconTabFilter icon="sap-icon://sap-box" iconColor="Positive" text="Controladoria">
+
+                        <IconTabSeparator icon="sap-icon://open-command-field" visible="{= ${Details>/areasolicitante} ? true : false }"/>
+
+                        <IconTabFilter icon="sap-icon://sap-box" iconColor="{ path: 'Details>/controladoria/status', formatter: '.formatter.formatStatusIconColor' }" 
+                            text="Controladoria" visible="{= ${Details>/controladoria} ? true : false }">
                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.controladoria" type="XML"/>
                         </IconTabFilter>
-                        <IconTabSeparator icon="sap-icon://open-command-field" />
-                        <IconTabFilter icon="sap-icon://edit" iconColor="Positive" text="Assinatura">                                    
+
+                        <IconTabSeparator icon="sap-icon://open-command-field" visible="{= ${Details>/controladoria} ? true : false }"/>
+
+                        <IconTabFilter icon="sap-icon://edit" iconColor="{ path: 'Details>/assinatura/status', formatter: '.formatter.formatStatusIconColor' }" 
+                            text="Assinatura" visible="{= ${Details>/assinatura} ? true : false }">                                    
                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.assinatura" type="XML"/>
                         </IconTabFilter>
-                        <IconTabSeparator icon="sap-icon://open-command-field" />                                                                                                
-                        <IconTabFilter icon="sap-icon://sales-order" iconColor="Critical" text="ECC" >
+
+                        <IconTabSeparator icon="sap-icon://open-command-field" visible="{= ${Details>/assinatura} ? true : false }"/>    
+
+                        <IconTabFilter icon="sap-icon://sales-order" iconColor="{ path: 'Details>/integracaoecc/status', formatter: '.formatter.formatStatusIconColor' }" 
+                            text="ECC" visible="{= ${Details>/integracaoecc} ? true : false }">
                             <core:Fragment fragmentName="com.brf.trackingprocessos.trackingprocessosfrontend.view.detalhes.integracao-ecc" type="XML"/>
                         </IconTabFilter>                        
                     </items>
