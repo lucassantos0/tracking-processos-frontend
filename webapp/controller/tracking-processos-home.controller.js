@@ -23,7 +23,9 @@ sap.ui.define([
 				var firstDate = new Date;
 				firstDate.setMonth( firstDate.getMonth() - 4 );
 				this.getView().byId("filtroData").setDateValue( firstDate );
-				this.getView().byId("filtroData").setSecondDateValue( new Date );
+				var lastDate = new Date;
+				lastDate.setMonth( lastDate.getMonth() + 2 );
+				this.getView().byId("filtroData").setSecondDateValue( lastDate );
 				var sDateIni = this.getView().byId("filtroData").getDateValue().toISOString().split('T')[0].replace(/-/g,'');
 				var sDateFim = this.getView().byId("filtroData").getSecondDateValue().toISOString().split('T')[0].replace(/-/g,'');	
 				aFilter.push(new Filter("estimatedProcessEndDate", FilterOperator.BT, sDateIni,sDateFim));
@@ -96,6 +98,7 @@ sap.ui.define([
 				this.byId("pageContainer").to(this.getView().createId("detalhes"));
 			},
 
+			
 			onSideNavButtonPress: function () {
 				var oToolPage = this.byId("toolPage");
 				var bSideExpanded = oToolPage.getSideExpanded();
@@ -155,6 +158,24 @@ sap.ui.define([
 				var sDateFim = this.getView().byId("filtroData").getSecondDateValue().toISOString().split('T')[0].replace(/-/g,'');	
 				aFilter.push(new Filter("estimatedProcessEndDate", FilterOperator.BT, sDateIni,sDateFim));
 				oBinding.filter(aFilter);
+			},
+
+			onFiltrarProcesso: function (oEvent) {
+				var oList = this.byId("listProcessos");
+				var oBinding = oList.getBinding("items");				
+				var aFilter = oBinding.aFilters;
+				for (var i = 0; i < aFilter.length; i++) {
+					if (aFilter[i].sPath === "id"){ 
+						aFilter.splice(i,1);
+					}
+				}	
+				var sQuery = oEvent.mParameters.newValue;			
+				if(sQuery !== ""){										
+					aFilter.push(new Filter("id", FilterOperator.Contains, sQuery));
+					oBinding.filter(aFilter);
+				}else{	
+					oBinding.filter(aFilter);
+				}
 			},
 
 			onSelectMeusProcessos: function (oEvent) {				

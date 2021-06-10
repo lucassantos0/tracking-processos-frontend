@@ -6,13 +6,14 @@
     xmlns:card="sap.f.cards"
 	xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:l="sap.ui.layout">
-	<f:Card class="sapUiTinyMargin" width="auto" tooltip="Contato: João da Silva">
+	<f:Card class="sapUiTinyMargin" width="20em" tooltip="Contato: João da Silva">
 		<f:header>
 			<card:Header title="Área Solicitante" subtitle="Concluída" />
 		</f:header>
 		<f:content>
   			<VBox>
-				<StandardListItem title="D1 - CRW - João da Silva" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
+				<StandardListItem title="D1 - CRW - João da Silva" description="Data: 03/06/2021" highlight="Success" infoStateInverted="false"/>		
+				<Text text="Texto aprovação"/>		
 			</VBox>
 		</f:content>
 	</f:Card>

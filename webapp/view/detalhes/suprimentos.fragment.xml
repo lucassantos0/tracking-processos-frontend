@@ -5,10 +5,8 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:card="sap.f.cards"
 	xmlns:html="http://www.w3.org/1999/xhtml" 
-    xmlns:l="sap.ui.layout">
-			
+    xmlns:l="sap.ui.layout">			
 		<StandardListItem title="SLA da Negociação/Cotação" description="Aceite em andamento" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" type="Active" press="onSlaDetail"/>		
-		<StandardListItem title="Suprimentos" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="false" infoStateInverted="true" />				
 			<f:Card class="sapUiTinyMargin" width="auto" tooltip="Contato: João da Silva">
 					<f:header>
 						<card:Header title="Aceite de Demanda" subtitle="Concluído" />
@@ -26,11 +24,7 @@
 					</f:header>
 					<f:content>
 						<VBox>
-							<StandardListItem title="F1 - Descrição F1" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
-							<StandardListItem title="F2 - Descrição F2" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />							
-							<StandardListItem title="F3 - Descrição F3" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
-							<StandardListItem title="F4 - Descrição F4" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
-							<StandardListItem title="F5 - Descrição F5" description="Data: 03/06/2021" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" />				
+							<StandardListItem title="F1 - Descrição F1" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />						
 						</VBox>
 					</f:content>
 				</f:Card>
@@ -41,11 +35,7 @@
 					</f:header>
 					<f:content>
 						<VBox>
-							<StandardListItem title="G1 - Descrição G1" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
-							<StandardListItem title="G2 - Descrição G2" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />							
-							<StandardListItem title="G3 - Descrição G3" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />				
-							<StandardListItem title="G4 - Descrição G4" description="Data: 03/06/2021" highlight="Error" adaptTitleSize="true" infoStateInverted="true" />				
-							<StandardListItem title="G5 - Descrição G5" description="Data: 03/06/2021" highlight="Warning" adaptTitleSize="true" infoStateInverted="true" />				
+							<StandardListItem title="G1 - Descrição G1" description="Data: 03/06/2021" highlight="Success" adaptTitleSize="true" infoStateInverted="true" />							
 						</VBox>
 					</f:content>
 				</f:Card>

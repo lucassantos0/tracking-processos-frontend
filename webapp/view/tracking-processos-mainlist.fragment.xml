@@ -13,10 +13,10 @@
 		<headerToolbar>
 			<OverflowToolbar>
 				<content>
-					<Label text="{i18n>mainlist-estimatedenddate}"/>
 					<DateRangeSelection id="filtroData" displayFormat="dd/MM/yyyy" width="13em" change="onDateRange" />
 					<ToolbarSpacer />
-					<ToolbarSpacer />
+					<SearchField width="10em" placeholder="Processo" liveChange="onFiltrarProcesso"/>
+					<ToolbarSpacer />					
 					<CheckBox id="ckMeusProcessos" text="{i18n>mainlist-meusprocessos}" select="onSelectMeusProcessos"/>
 					<Label text="Etapa"/>	
 					<Select	id="slEtapa" forceSelection="false" selectedKey="todos" width="9em" change="onSelectEtapa">
